@@ -1,2 +1,2 @@
 # Siryoukan
-https://chtagpt.com
+https://chatgpt.com
