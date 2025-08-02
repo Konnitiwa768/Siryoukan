@@ -1,2 +1,2 @@
 # Siryoukan
-Hhttps://chtagpt.com
+https://chtagpt.com
