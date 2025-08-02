@@ -2,36 +2,100 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
   <defs>
     <linearGradient id="ribbonGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-      <stop offset="0%" style="stop-color:deepskyblue;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:lawngreen;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:red;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:deepskyblue;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:lawngreen;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:red;stop-opacity:1"/>
+    </linearGradient>
+
+    <linearGradient id="bladeGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ddd;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#aaa;stop-opacity:1"/>
+    </linearGradient>
+
+    <linearGradient id="handleGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#5e2e0c;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#a9744f;stop-opacity:1"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
+  <!-- 背景 -->
   <rect width="600" height="800" fill="white"/>
 
-  <!-- Crossed swords -->
-  <line x1="240" y1="180" x2="360" y2="420" stroke="silver" stroke-width="6"/>
-  <line x1="360" y1="180" x2="240" y2="420" stroke="silver" stroke-width="6"/>
+  <!-- 盾のフレーム -->
+  <path d="
+    M100,100
+    L100,500
+    Q100,650 300,750
+    Q500,650 500,500
+    L500,100
+    Z"
+    fill="none" stroke="#333" stroke-width="8" />
 
-  <!-- Olive branches -->
-  <path d="M150,400 Q100,300 150,200" stroke="green" stroke-width="8" fill="none"/>
-  <path d="M450,400 Q500,300 450,200" stroke="green" stroke-width="8" fill="none"/>
+  <!-- 剣：左 -->
+  <rect x="292" y="180" width="6" height="100" transform="rotate(45 295 180)" fill="url(#handleGradient)"/>
+  <rect x="292" y="270" width="6" height="160" transform="rotate(45 295 270)" fill="url(#bladeGradient)"/>
 
-  <!-- Six-pointed star -->
+  <!-- 剣：右 -->
+  <rect x="302" y="180" width="6" height="100" transform="rotate(-45 305 180)" fill="url(#handleGradient)"/>
+  <rect x="302" y="270" width="6" height="160" transform="rotate(-45 305 270)" fill="url(#bladeGradient)"/>
+
+  <!-- 六芒星 -->
   <polygon points="300,260 320,310 375,310 330,345 350,400 300,370 250,400 270,345 225,310 280,310"
            fill="yellow" stroke="red" stroke-width="6"/>
 
-  <!-- Crown -->
+  <!-- 王冠 -->
   <path d="M270,150 Q300,100 330,150 L325,140 L300,120 L275,140 Z"
         fill="gold" stroke="red" stroke-width="2"/>
 
-  <!-- Ribbon -->
-  <rect x="200" y="700" width="200" height="30" fill="url(#ribbonGradient)"/>
+  <!-- オリーブの葉 左 -->
+  <g stroke="green" stroke-width="3" fill="none">
+    <path d="M138,220 Q144,215 150,220"/>
+    <path d="M136,230 Q142,225 148,230"/>
+    <path d="M134,240 Q140,235 146,240"/>
+    <path d="M132,250 Q138,245 144,250"/>
+    <path d="M130,260 Q136,255 142,260"/>
+    <path d="M128,270 Q134,265 140,270"/>
+    <path d="M126,280 Q132,275 138,280"/>
+    <path d="M124,290 Q130,285 136,290"/>
+    <path d="M122,300 Q128,295 134,300"/>
+    <path d="M120,310 Q126,305 132,310"/>
+    <path d="M118,320 Q124,315 130,320"/>
+    <path d="M116,330 Q122,325 128,330"/>
+    <path d="M114,340 Q120,335 126,340"/>
+    <path d="M112,350 Q118,345 124,350"/>
+    <path d="M110,360 Q116,355 122,360"/>
+    <path d="M108,370 Q114,365 120,370"/>
+    <path d="M106,380 Q112,375 118,380"/>
+    <path d="M104,390 Q110,385 116,390"/>
+  </g>
 
-  <!-- Text -->
-  <text x="300" y="740" font-size="18" font-family="serif" text-anchor="middle" fill="black">
-    Frand’iore repūdek
-  </text>
+  <!-- オリーブの葉 右 -->
+  <g stroke="green" stroke-width="3" fill="none">
+    <path d="M462,220 Q456,215 450,220"/>
+    <path d="M464,230 Q458,225 452,230"/>
+    <path d="M466,240 Q460,235 454,240"/>
+    <path d="M468,250 Q462,245 456,250"/>
+    <path d="M470,260 Q464,255 458,260"/>
+    <path d="M472,270 Q466,265 460,270"/>
+    <path d="M474,280 Q468,275 462,280"/>
+    <path d="M476,290 Q470,285 464,290"/>
+    <path d="M478,300 Q472,295 466,300"/>
+    <path d="M480,310 Q474,305 468,310"/>
+    <path d="M482,320 Q476,315 470,320"/>
+    <path d="M484,330 Q478,325 472,330"/>
+    <path d="M486,340 Q480,335 474,340"/>
+    <path d="M488,350 Q482,345 476,350"/>
+    <path d="M490,360 Q484,355 478,360"/>
+    <path d="M492,370 Q486,365 480,370"/>
+    <path d="M494,380 Q488,375 482,380"/>
+    <path d="M496,390 Q490,385 484,390"/>
+  </g>
+
+  <!-- リボン -->
+  <rect x="200" y="640" width="200" height="30" fill="url(#ribbonGradient)"/>
+
+  <!-- 国名 -->
+  <text x="300" y="675" font-size="18" font-family="serif"
+        text-anchor="middle" fill="black">Frand’iore repūdek</text>
+</svg>
 </svg>
