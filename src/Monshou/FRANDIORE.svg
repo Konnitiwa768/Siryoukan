@@ -35,75 +35,86 @@
         fill="url(#shieldGradient)" stroke="#333" stroke-width="8"/>
 
   <!-- 剣：左 -->
-  <path d="M289,180 L301,180 L301,220 Q295,225 289,220 Z"
-        fill="url(#handleGradient)" transform="rotate(45 295 180)"/>
-  <rect x="292" y="220" width="6" height="160" rx="2" ry="2"
-        fill="url(#bladeGradient)" transform="rotate(45 295 220)"/>
+  <g transform="rotate(45 295 180)">
+    <rect x="290" y="170" width="10" height="40" rx="3" ry="3" fill="url(#handleGradient)" />
+    <path d="M290,210 L295,215 L300,210 Z" fill="url(#handleGradient)" />
+    <rect x="292" y="210" width="6" height="160" rx="2" ry="2" fill="url(#bladeGradient)" />
+  </g>
 
   <!-- 剣：右 -->
-  <path d="M299,180 L311,180 L311,220 Q305,225 299,220 Z"
-        fill="url(#handleGradient)" transform="rotate(-45 305 180)"/>
-  <rect x="302" y="220" width="6" height="160" rx="2" ry="2"
-        fill="url(#bladeGradient)" transform="rotate(-45 305 220)"/>
+  <g transform="rotate(-45 305 180)">
+    <rect x="300" y="170" width="10" height="40" rx="3" ry="3" fill="url(#handleGradient)" />
+    <path d="M310,210 L305,215 L300,210 Z" fill="url(#handleGradient)" />
+    <rect x="302" y="210" width="6" height="160" rx="2" ry="2" fill="url(#bladeGradient)" />
+  </g>
 
   <!-- 六芒星 -->
   <polygon points="300,260 320,310 375,310 330,345 350,400 300,370 250,400 270,345 225,310 280,310"
            fill="yellow" stroke="red" stroke-width="6"/>
 
   <!-- 王冠 -->
-  <path d="M260,150 Q300,90 340,150 L330,145 L300,100 L270,145 Z"
-        fill="gold" stroke="darkred" stroke-width="2"/>
-  <circle cx="275" cy="145" r="4" fill="red"/>
-  <circle cx="300" cy="130" r="4" fill="red"/>
-  <circle cx="325" cy="145" r="4" fill="red"/>
-  <path d="M275,145 Q300,110 325,145" fill="none" stroke="gold" stroke-width="3"/>
+  <g stroke="darkred" stroke-width="2" fill="gold" transform="translate(260,140)">
+    <g transform="rotate(-45, 20, 30)">
+      <path d="M10,50 L20,10 L30,50 Z"/>
+      <circle cx="20" cy="10" r="4" fill="red"/>
+    </g>
+    <path d="M40,50 L60,10 L80,50 Z"/>
+    <circle cx="60" cy="10" r="4" fill="red"/>
+    <g transform="rotate(45, 90, 30)">
+      <path d="M80,50 L90,10 L100,50 Z"/>
+      <circle cx="90" cy="10" r="4" fill="red"/>
+    </g>
+    <path d="M20,10 L60,10 L90,10" fill="none" stroke="gold" stroke-width="3"/>
+  </g>
 
   <!-- オリーブ左枝 -->
-  <path d="M150,400 Q100,300 150,200" stroke="green" stroke-width="5" fill="none"/>
-  <!-- 左葉18枚 -->
+  <path id="leftBranch" d="M150,400 Q100,300 150,200" stroke="green" stroke-width="5" fill="none"/>
+
+  <!-- 左葉18枚：枝の曲線に沿うよう配置 -->
   <g stroke="green" stroke-width="2" fill="none">
-    <path d="M138,220 Q144,215 150,220"/>
-    <path d="M136,230 Q142,225 148,230"/>
-    <path d="M134,240 Q140,235 146,240"/>
-    <path d="M132,250 Q138,245 144,250"/>
-    <path d="M130,260 Q136,255 142,260"/>
-    <path d="M128,270 Q134,265 140,270"/>
-    <path d="M126,280 Q132,275 138,280"/>
-    <path d="M124,290 Q130,285 136,290"/>
-    <path d="M122,300 Q128,295 134,300"/>
-    <path d="M120,310 Q126,305 132,310"/>
-    <path d="M118,320 Q124,315 130,320"/>
-    <path d="M116,330 Q122,325 128,330"/>
-    <path d="M114,340 Q120,335 126,340"/>
-    <path d="M112,350 Q118,345 124,350"/>
-    <path d="M110,360 Q116,355 122,360"/>
-    <path d="M108,370 Q114,365 120,370"/>
-    <path d="M106,380 Q112,375 118,380"/>
-    <path d="M104,390 Q110,385 116,390"/>
+    <path d="M143,230 Q147,225 150,230"/>
+    <path d="M140,240 Q144,235 147,240"/>
+    <path d="M137,250 Q141,245 144,250"/>
+    <path d="M134,260 Q138,255 141,260"/>
+    <path d="M131,270 Q135,265 138,270"/>
+    <path d="M128,280 Q132,275 135,280"/>
+    <path d="M125,290 Q129,285 132,290"/>
+    <path d="M122,300 Q126,295 129,300"/>
+    <path d="M119,310 Q123,305 126,310"/>
+    <path d="M116,320 Q120,315 123,320"/>
+    <path d="M113,330 Q117,325 120,330"/>
+    <path d="M110,340 Q114,335 117,340"/>
+    <path d="M107,350 Q111,345 114,350"/>
+    <path d="M104,360 Q108,355 111,360"/>
+    <path d="M101,370 Q105,365 108,370"/>
+    <path d="M98,380 Q102,375 105,380"/>
+    <path d="M95,390 Q99,385 102,390"/>
+    <path d="M92,400 Q96,395 99,400"/>
   </g>
 
   <!-- オリーブ右枝 -->
-  <path d="M450,400 Q500,300 450,200" stroke="green" stroke-width="5" fill="none"/>
-  <!-- 右葉18枚 -->
+  <path id="rightBranch" d="M450,400 Q500,300 450,200" stroke="green" stroke-width="5" fill="none"/>
+
+  <!-- 右葉18枚：枝の曲線に沿うよう配置 -->
   <g stroke="green" stroke-width="2" fill="none">
-    <path d="M462,220 Q456,215 450,220"/>
-    <path d="M464,230 Q458,225 452,230"/>
-    <path d="M466,240 Q460,235 454,240"/>
-    <path d="M468,250 Q462,245 456,250"/>
-    <path d="M470,260 Q464,255 458,260"/>
-    <path d="M472,270 Q466,265 460,270"/>
-    <path d="M474,280 Q468,275 462,280"/>
-    <path d="M476,290 Q470,285 464,290"/>
-    <path d="M478,300 Q472,295 466,300"/>
-    <path d="M480,310 Q474,305 468,310"/>
-    <path d="M482,320 Q476,315 470,320"/>
-    <path d="M484,330 Q478,325 472,330"/>
-    <path d="M486,340 Q480,335 474,340"/>
-    <path d="M488,350 Q482,345 476,350"/>
-    <path d="M490,360 Q484,355 478,360"/>
-    <path d="M492,370 Q486,365 480,370"/>
-    <path d="M494,380 Q488,375 482,380"/>
-    <path d="M496,390 Q490,385 484,390"/>
+    <path d="M457,230 Q453,225 450,230"/>
+    <path d="M460,240 Q456,235 453,240"/>
+    <path d="M463,250 Q459,245 456,250"/>
+    <path d="M466,260 Q462,255 459,260"/>
+    <path d="M469,270 Q465,265 462,270"/>
+    <path d="M472,280 Q468,275 465,280"/>
+    <path d="M475,290 Q471,285 468,290"/>
+    <path d="M478,300 Q474,295 471,300"/>
+    <path d="M481,310 Q477,305 474,310"/>
+    <path d="M484,320 Q480,315 477,320"/>
+    <path d="M487,330 Q483,325 480,330"/>
+    <path d="M490,340 Q486,335 483,340"/>
+    <path d="M493,350 Q489,345 486,350"/>
+    <path d="M496,360 Q492,355 489,360"/>
+    <path d="M499,370 Q495,365 492,370"/>
+    <path d="M502,380 Q498,375 495,380"/>
+    <path d="M505,390 Q501,385 498,390"/>
+    <path d="M508,400 Q504,395 501,400"/>
   </g>
 
   <!-- リボン -->
