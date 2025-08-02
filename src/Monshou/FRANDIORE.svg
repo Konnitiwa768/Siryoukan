@@ -1,53 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="800" viewBox="0 0 600 800">
   <defs>
-    <linearGradient id="ribbonGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-      <stop offset="0%" style="stop-color:deepskyblue;stop-opacity:1"/>
-      <stop offset="50%" style="stop-color:lawngreen;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:red;stop-opacity:1"/>
+    <!-- 盾背景グラデーション -->
+    <linearGradient id="shieldGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#007FFF"/>
+      <stop offset="100%" stop-color="#00FF88"/>
     </linearGradient>
 
+    <!-- 剣の刃（鉄） -->
     <linearGradient id="bladeGradient" x1="0%" x2="0%" y1="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#ddd;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#aaa;stop-opacity:1"/>
+      <stop offset="0%" stop-color="#e0e0e0"/>
+      <stop offset="100%" stop-color="#b0b0b0"/>
     </linearGradient>
 
+    <!-- 剣の柄（木） -->
     <linearGradient id="handleGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-      <stop offset="0%" style="stop-color:#5e2e0c;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#a9744f;stop-opacity:1"/>
+      <stop offset="0%" stop-color="#5e2e0c"/>
+      <stop offset="100%" stop-color="#a9744f"/>
+    </linearGradient>
+
+    <!-- リボン -->
+    <linearGradient id="ribbonGradient" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="deepskyblue"/>
+      <stop offset="50%" stop-color="lawngreen"/>
+      <stop offset="100%" stop-color="red"/>
     </linearGradient>
   </defs>
 
   <!-- 背景 -->
   <rect width="600" height="800" fill="white"/>
 
-  <!-- 盾のフレーム -->
-  <path d="
-    M100,100
-    L100,500
-    Q100,650 300,750
-    Q500,650 500,500
-    L500,100
-    Z"
-    fill="none" stroke="#333" stroke-width="8" />
+  <!-- 盾 -->
+  <path d="M100,100 L100,500 Q100,650 300,750 Q500,650 500,500 L500,100 Z"
+        fill="url(#shieldGradient)" stroke="#333" stroke-width="8"/>
 
   <!-- 剣：左 -->
-  <rect x="292" y="180" width="6" height="100" transform="rotate(45 295 180)" fill="url(#handleGradient)"/>
-  <rect x="292" y="270" width="6" height="160" transform="rotate(45 295 270)" fill="url(#bladeGradient)"/>
+  <path d="M289,180 L301,180 L301,220 Q295,225 289,220 Z"
+        fill="url(#handleGradient)" transform="rotate(45 295 180)"/>
+  <rect x="292" y="220" width="6" height="160" rx="2" ry="2"
+        fill="url(#bladeGradient)" transform="rotate(45 295 220)"/>
 
   <!-- 剣：右 -->
-  <rect x="302" y="180" width="6" height="100" transform="rotate(-45 305 180)" fill="url(#handleGradient)"/>
-  <rect x="302" y="270" width="6" height="160" transform="rotate(-45 305 270)" fill="url(#bladeGradient)"/>
+  <path d="M299,180 L311,180 L311,220 Q305,225 299,220 Z"
+        fill="url(#handleGradient)" transform="rotate(-45 305 180)"/>
+  <rect x="302" y="220" width="6" height="160" rx="2" ry="2"
+        fill="url(#bladeGradient)" transform="rotate(-45 305 220)"/>
 
   <!-- 六芒星 -->
   <polygon points="300,260 320,310 375,310 330,345 350,400 300,370 250,400 270,345 225,310 280,310"
            fill="yellow" stroke="red" stroke-width="6"/>
 
   <!-- 王冠 -->
-  <path d="M270,150 Q300,100 330,150 L325,140 L300,120 L275,140 Z"
-        fill="gold" stroke="red" stroke-width="2"/>
+  <path d="M260,150 Q300,90 340,150 L330,145 L300,100 L270,145 Z"
+        fill="gold" stroke="darkred" stroke-width="2"/>
+  <circle cx="275" cy="145" r="4" fill="red"/>
+  <circle cx="300" cy="130" r="4" fill="red"/>
+  <circle cx="325" cy="145" r="4" fill="red"/>
+  <path d="M275,145 Q300,110 325,145" fill="none" stroke="gold" stroke-width="3"/>
 
-  <!-- オリーブの葉 左 -->
-  <g stroke="green" stroke-width="3" fill="none">
+  <!-- オリーブ左枝 -->
+  <path d="M150,400 Q100,300 150,200" stroke="green" stroke-width="5" fill="none"/>
+  <!-- 左葉18枚 -->
+  <g stroke="green" stroke-width="2" fill="none">
     <path d="M138,220 Q144,215 150,220"/>
     <path d="M136,230 Q142,225 148,230"/>
     <path d="M134,240 Q140,235 146,240"/>
@@ -68,8 +82,10 @@
     <path d="M104,390 Q110,385 116,390"/>
   </g>
 
-  <!-- オリーブの葉 右 -->
-  <g stroke="green" stroke-width="3" fill="none">
+  <!-- オリーブ右枝 -->
+  <path d="M450,400 Q500,300 450,200" stroke="green" stroke-width="5" fill="none"/>
+  <!-- 右葉18枚 -->
+  <g stroke="green" stroke-width="2" fill="none">
     <path d="M462,220 Q456,215 450,220"/>
     <path d="M464,230 Q458,225 452,230"/>
     <path d="M466,240 Q460,235 454,240"/>
